@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inverter Sequência</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Inverter Sequência</h2>
+        <p class="subtitulo">Digite uma sequência de caracteres</p>
+        <input id="gabs" type="text">
+        <br>
+        <button onclick="inverter()">Inverter</button>
+        <h3>Sequência Invertida:</h3>
+        <p id="resultado"> </p>
+
+    </div>
+    <script>
+        function inverter() {
+            var texto = document.getElementById('gabs').value;
+            var bancotexto = texto.split('').reverse().join('');
+            document.getElementById('resultado').textContent = bancotexto;
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

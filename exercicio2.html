@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Adicionar nome</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Adicionar nome</h2>
+        <p class="subtitulo">Adicionar nomes à lista</p>
+        <input id="gabs" type="text">
+        <br>
+        <button onclick="adicionar()">Adicionar Nome</button>
+        <p> </p>
+        <button onclick="listar()">Listar</button>
+        <h3>Nomes:</h3>
+        <p id="resultado"> </p>
+
+    </div>
+
+    </div>
+    <script>
+        var nomes = []
+        function adicionar() {
+            var nome = document.getElementById('gabs').value;
+            nomes.push(nome);
+            alert("Nome adicionado com sucesso!");
+        }
+        function listar() {
+            var lista = nomes.join(' ')
+            document.getElementById('resultado').textContent = nomes;
+            if (nomes.length === 0) alert("A lista está vazia!")
+        }
+        function buscar() {
+v
+        }
+    </script>
+
+
+
+</body>
+
+</html>
