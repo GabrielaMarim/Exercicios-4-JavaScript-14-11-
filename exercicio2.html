@@ -4,44 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Adicionar nome</title>
+    <title>Document</title>
+    <style>
+        button {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app">
-        <h2>Adicionar nome</h2>
-        <p class="subtitulo">Adicionar nomes à lista</p>
-        <input id="gabs" type="text">
-        <br>
-        <button onclick="adicionar()">Adicionar Nome</button>
-        <p> </p>
-        <button onclick="listar()">Listar</button>
-        <h3>Nomes:</h3>
-        <p id="resultado"> </p>
-
-    </div>
-
-    </div>
+    <input id="entrada" type="text">
+    <button onclick="funcaoadicionar()">Adicionar</button>
+    <button onclick="funcaolistar()">Listar</button>
+    <button onclick="funcaobuscar()">Buscar</button>
+    <button onclick="funcaoremover()">Remover</button>
+    <p id="resultado"></p>
     <script>
-        var nomes = []
-        function adicionar() {
-            var nome = document.getElementById('gabs').value;
-            nomes.push(nome);
-            alert("Nome adicionado com sucesso!");
+        var nomes = [];
+
+        function funcaoadicionar() {
+            var adicionarnome = document.getElementById('entrada').value;
+            nomes.push(adicionarnome);
         }
-        function listar() {
-            var lista = nomes.join(' ')
-            document.getElementById('resultado').textContent = nomes;
-            if (nomes.length === 0) alert("A lista está vazia!")
+
+        function funcaolistar() {
+            if (nomes.length > 0) {
+                var lista = nomes.join('-');
+                document.getElementById('resultado').textContent = lista;
+
+            }
+            else {
+                alert('Vazio')
+            }
         }
-        function buscar() {
-v
+        function funcaobuscar() {
+            var nomebuscar = document.getElementById('entrada').value;
+            var buscaresultado = nomes.indexOf(nomebuscar);
+            if (buscaresultado !== -1) {
+                alert('Nome encontrado')
+
+            }
+            else {
+                alert('Nome não encontrado')
+            }
+        }
+        function funcaoremover() {
+            var nomeremover = document.getElementById('entrada').value;
+            var removerresultado = nomes.indexOf(nomeremover);
+            if (removerresultado !== -1) {
+                nomes.splice(removerresultado, 1);
+            }
+            else {
+                alert('Esse nome  já não existe')
+            }
         }
     </script>
-
-
-
 </body>
 
 </html>
